@@ -451,6 +451,73 @@
   .hidden-until { display: none; }
   .hidden-until.show { display: block; animation: slideDown 0.3s ease; }
 
+  /* Person cards (tú + acompañantes) */
+  .person-card {
+    background: var(--paper);
+    border: 1px solid rgba(58, 90, 44, 0.2);
+    border-left: 3px solid var(--crimson);
+    border-radius: 4px;
+    padding: 1.25rem 1rem 0.5rem;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  .person-card.primary { border-left-color: var(--green-deep); }
+
+  .person-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .person-badge {
+    display: inline-block;
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 0.2rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .person-card:not(.primary) .person-badge { background: var(--crimson); }
+
+  .person-name-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .remove-person {
+    position: absolute;
+    top: 0.75rem; right: 0.75rem;
+    background: transparent;
+    border: none;
+    color: var(--crimson);
+    font-size: 1.3rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+  }
+
+  .remove-person:hover { opacity: 1; background: rgba(156, 46, 42, 0.08); }
+
+  .allergen-grid { max-height: none; }
+
+  .add-person-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
   @keyframes slideDown {
     from { opacity: 0; transform: translateY(-6px); }
     to { opacity: 1; transform: translateY(0); }
@@ -721,29 +788,70 @@
         </div>
 
         <div class="hidden-until" id="asiste">
-          <div class="form-group">
-            <label for="acompanantes">Número total de personas (incluyéndote)</label>
-            <input type="number" id="acompanantes" name="acompanantes" min="1" max="10" value="1">
-          </div>
 
           <div class="form-group">
-            <label>Alergias o intolerancias alimentarias</label>
-            <div class="checkbox-grid">
-              <label><input type="checkbox" name="alergenos" value="Gluten"> Gluten</label>
-              <label><input type="checkbox" name="alergenos" value="Lactosa"> Lactosa</label>
-              <label><input type="checkbox" name="alergenos" value="Frutos secos"> Frutos secos</label>
-              <label><input type="checkbox" name="alergenos" value="Marisco"> Marisco</label>
-              <label><input type="checkbox" name="alergenos" value="Huevo"> Huevo</label>
-              <label><input type="checkbox" name="alergenos" value="Pescado"> Pescado</label>
-              <label><input type="checkbox" name="alergenos" value="Vegetariano"> Vegetariano</label>
-              <label><input type="checkbox" name="alergenos" value="Vegano"> Vegano</label>
+            <label>¿Vienes solo o acompañado?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="modo_asistencia" value="Solo" data-target="solo" checked>
+                <span>Voy solo/a</span>
+              </label>
+              <label>
+                <input type="radio" name="modo_asistencia" value="Con acompañantes" data-target="acompanado">
+                <span>Con acompañantes</span>
+              </label>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="otras">Otras alergias o aclaraciones del menú</label>
-            <textarea id="otras" name="otras_alergias" rows="2" placeholder="p. ej. soja, sésamo, celíaco estricto…"></textarea>
+          <!-- BLOQUE PRIMARIO (siempre visible si asiste) -->
+          <div class="person-card primary">
+            <div class="person-title">
+              <span class="person-badge">Tú</span>
+              <span class="person-name-display" id="primaryNameDisplay">&mdash;</span>
+            </div>
+
+            <div class="form-group">
+              <label>Tus alergias o intolerancias</label>
+              <div class="checkbox-grid allergen-grid">
+                <label><input type="checkbox" name="alergenos_tu" value="Gluten / celiaquía"> Gluten / celíaco</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Lácteos / lactosa"> Lácteos / lactosa</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Huevos"> Huevos</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Pescado"> Pescado</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Crustáceos"> Crustáceos</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Moluscos"> Moluscos</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Frutos de cáscara"> Frutos secos</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Cacahuetes"> Cacahuetes</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Soja"> Soja</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Sésamo"> Sésamo</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Apio"> Apio</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Sulfitos"> Sulfitos</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Altramuces"> Altramuces</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Vegetariano"> Vegetariano</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Vegano"> Vegano</label>
+                <label><input type="checkbox" name="alergenos_tu" value="Menú infantil"> Menú infantil</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="otras_tu">Otras alergias / aclaraciones (tú)</label>
+              <input type="text" id="otras_tu" name="otras_alergias_tu" placeholder="opcional">
+            </div>
           </div>
+
+          <!-- BLOQUE ACOMPAÑANTES -->
+          <div class="hidden-until" id="acompanado">
+            <div id="acompanantes-list"></div>
+
+            <button type="button" class="btn btn-outline add-person-btn" onclick="addPerson()">
+              + Añadir acompañante
+            </button>
+            <input type="hidden" name="numero_acompanantes" id="numAcompanantes" value="0">
+          </div>
+
+          <!-- BLOQUE SOLO (opcional: nada extra) -->
+          <div class="hidden-until show" id="solo"></div>
+
         </div>
 
         <div class="hidden-until" id="noasiste">
@@ -827,14 +935,100 @@
 </footer>
 
 <script>
-  // Mostrar/ocultar bloques según asistencia
+  // Mostrar/ocultar bloques según asistencia (sí/no)
   document.querySelectorAll('input[name="asistencia"]').forEach(radio => {
     radio.addEventListener('change', (e) => {
-      document.querySelectorAll('.hidden-until').forEach(el => el.classList.remove('show'));
+      ['asiste', 'noasiste'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('show');
+      });
       const target = document.getElementById(e.target.dataset.target);
       if (target) target.classList.add('show');
     });
   });
+
+  // Modo: solo vs con acompañantes
+  document.querySelectorAll('input[name="modo_asistencia"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      ['solo', 'acompanado'].forEach(id => {
+        document.getElementById(id).classList.remove('show');
+      });
+      document.getElementById(e.target.dataset.target).classList.add('show');
+    });
+  });
+
+  // Reflejar nombre del anfitrión en el badge "Tú"
+  const nombreInput = document.getElementById('nombre');
+  const primaryNameDisplay = document.getElementById('primaryNameDisplay');
+  nombreInput.addEventListener('input', () => {
+    primaryNameDisplay.textContent = nombreInput.value || '—';
+  });
+
+  // Añadir acompañantes dinámicamente
+  const ALERGENOS = [
+    'Gluten / celiaquía', 'Lácteos / lactosa', 'Huevos', 'Pescado',
+    'Crustáceos', 'Moluscos', 'Frutos de cáscara', 'Cacahuetes',
+    'Soja', 'Sésamo', 'Apio', 'Mostaza',
+    'Sulfitos', 'Altramuces', 'Vegetariano', 'Vegano', 'Menú infantil'
+  ];
+  const ALERGENOS_LABEL = {
+    'Gluten / celiaquía': 'Gluten / celíaco',
+    'Lácteos / lactosa': 'Lácteos / lactosa',
+    'Frutos de cáscara': 'Frutos secos'
+  };
+
+  let personCount = 0;
+
+  function addPerson() {
+    personCount++;
+    const idx = personCount;
+    const list = document.getElementById('acompanantes-list');
+
+    const card = document.createElement('div');
+    card.className = 'person-card';
+    card.dataset.personId = idx;
+
+    const allergens = ALERGENOS.map(a =>
+      `<label><input type="checkbox" name="acomp${idx}_alergenos" value="${a}"> ${ALERGENOS_LABEL[a] || a}</label>`
+    ).join('');
+
+    card.innerHTML = `
+      <button type="button" class="remove-person" onclick="removePerson(${idx})" aria-label="Eliminar">×</button>
+      <div class="person-title">
+        <span class="person-badge">Acompañante ${list.children.length + 1}</span>
+      </div>
+      <div class="form-group">
+        <label>Nombre del acompañante</label>
+        <input type="text" name="acomp${idx}_nombre" required>
+      </div>
+      <div class="form-group">
+        <label>Sus alergias o intolerancias</label>
+        <div class="checkbox-grid allergen-grid">${allergens}</div>
+      </div>
+      <div class="form-group">
+        <label>Otras alergias / aclaraciones</label>
+        <input type="text" name="acomp${idx}_otras" placeholder="opcional">
+      </div>
+    `;
+    list.appendChild(card);
+    updateCount();
+  }
+
+  function removePerson(idx) {
+    const card = document.querySelector(`[data-person-id="${idx}"]`);
+    if (card) card.remove();
+    // Renumerar badges visualmente
+    document.querySelectorAll('#acompanantes-list .person-card').forEach((el, i) => {
+      const badge = el.querySelector('.person-badge');
+      if (badge) badge.textContent = `Acompañante ${i + 1}`;
+    });
+    updateCount();
+  }
+
+  function updateCount() {
+    const n = document.querySelectorAll('#acompanantes-list .person-card').length;
+    document.getElementById('numAcompanantes').value = n;
+  }
 
   // Copiar IBAN
   function copyIban() {
