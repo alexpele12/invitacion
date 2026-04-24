@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alejandro & Maravillas · 13 Junio 2026</title>
+<meta name="description" content="Nos casamos el 13 de junio de 2026 en Lorca. Acompáñanos.">
+
+<!-- Open Graph para preview de WhatsApp -->
+<meta property="og:title" content="Alejandro & Maravillas">
+<meta property="og:description" content="Nos casamos · 13 de Junio de 2026 · Lorca">
+<meta property="og:image" content="assets/novios.jpg">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --pink: #f4dcd6;
+    --pink-deep: #e8b8b0;
+    --cream: #faf3e8;
+    --paper: #fdf8ef;
+    --green: #3a5a2c;
+    --green-deep: #284018;
+    --green-soft: #7a9164;
+    --crimson: #9c2e2a;
+    --gold: #c89b3c;
+    --ochre: #c4854a;
+    --ink: #2a2620;
+    --ink-soft: #4a4035;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 300;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .serif { font-family: 'Cormorant Garamond', serif; }
+  .script { font-family: 'Great Vibes', cursive; font-weight: 400; }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+    background: linear-gradient(180deg, var(--pink) 0%, var(--pink) 60%, var(--cream) 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/novios.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    z-index: 0;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
+  }
+
+  .novios-img {
+    max-width: 280px;
+    width: 70%;
+    margin: 0 auto 1.5rem;
+    display: block;
+    filter: drop-shadow(0 6px 20px rgba(40, 64, 24, 0.25));
+  }
+
+  .names {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 11vw, 5.5rem);
+    color: var(--green-deep);
+    line-height: 1;
+    margin: 0.5rem 0;
+  }
+
+  .names .amp {
+    color: var(--crimson);
+    font-size: 0.9em;
+    margin: 0 0.1em;
+  }
+
+  .hero-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 1.5rem;
+  }
+
+  .hero-date strong {
+    display: block;
+    font-size: 1.6em;
+    color: var(--crimson);
+    margin: 0.3rem 0;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .hero-place {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--green);
+    margin-top: 1rem;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--green);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+    z-index: 1;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+    50% { transform: translateX(-50%) translateY(6px); opacity: 1; }
+  }
+
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 400px;
+  }
+
+  .divider img {
+    width: 110px;
+    height: auto;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--green-soft), transparent);
+    margin: 0 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    font-weight: 500;
+    color: var(--green-deep);
+    margin: 0 0 0.3rem;
+    letter-spacing: 0.02em;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: var(--crimson);
+    margin: 0 0 2.5rem;
+    line-height: 1;
+  }
+
+  .intro-text {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ============ EVENT CARDS ============ */
+  .events {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+  }
+
+  .timeline {
+    position: relative;
+    margin: 2rem 0;
+  }
+
+  .event-card {
+    position: relative;
+    background: white;
+    border: 1px solid rgba(58, 90, 44, 0.15);
+    border-radius: 4px;
+    padding: 1.75rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(40, 64, 24, 0.08);
+    overflow: hidden;
+  }
+
+  .event-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-soft), var(--gold), var(--crimson));
+  }
+
+  .event-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+  }
+
+  .event-time {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: var(--crimson);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .event-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .event-place {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0 0 1rem;
+  }
+
+  .event-place strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 1.05em;
+    margin-bottom: 0.15rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    font-family: inherit;
+  }
+
+  .btn:hover, .btn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(40, 64, 24, 0.25);
+    background: var(--green);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--green-deep);
+    border: 1.5px solid var(--green-deep);
+  }
+
+  .btn-outline:hover, .btn-outline:focus-visible {
+    background: var(--green-deep);
+    color: var(--cream);
+  }
+
+  .btn-gold {
+    background: var(--ochre);
+    color: white;
+  }
+
+  .btn-gold:hover { background: var(--gold); }
+
+  /* ============ RSVP ============ */
+  .rsvp {
+    background:
+      linear-gradient(180deg, rgba(244, 220, 214, 0.5), rgba(244, 220, 214, 0.2)),
+      var(--paper);
+    padding: 4rem 1.5rem;
+  }
+
+  .rsvp-wrap {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .form-card {
+    background: white;
+    border-radius: 6px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 30px rgba(40, 64, 24, 0.1);
+    border: 1px solid rgba(200, 155, 60, 0.3);
+  }
+
+  .form-group { margin-bottom: 1.25rem; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="number"],
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid rgba(58, 90, 44, 0.25);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--paper);
+    color: var(--ink);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--crimson);
+    background: white;
+  }
+
+  .radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border: 1.5px solid rgba(58, 90, 44, 0.25);
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    transition: all 0.15s ease;
+    margin: 0;
+    background: var(--paper);
+  }
+
+  .radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .radio-group input[type="radio"]:checked + span {
+    color: white;
+  }
+
+  .radio-group label:has(input:checked) {
+    background: var(--green-deep);
+    border-color: var(--green-deep);
+    color: white;
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .checkbox-grid label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--paper);
+    border: 1px solid rgba(58, 90, 44, 0.15);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--ink-soft);
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .checkbox-grid input[type="checkbox"] {
+    accent-color: var(--green-deep);
+  }
+
+  .hidden-until { display: none; }
+  .hidden-until.show { display: block; animation: slideDown 0.3s ease; }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .form-success {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--cream);
+    border-radius: 6px;
+    border: 1px solid var(--green-soft);
+  }
+
+  .form-success h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--crimson);
+    margin: 0;
+  }
+
+  /* ============ GIFT ============ */
+  .gift {
+    text-align: center;
+    background: var(--cream);
+  }
+
+  .iban-card {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    border: 1px solid rgba(200, 155, 60, 0.4);
+    box-shadow: 0 4px 20px rgba(40, 64, 24, 0.08);
+    max-width: 100%;
+  }
+
+  .iban-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+
+  .iban {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.1em;
+    margin: 0.5rem 0 1rem;
+    word-break: break-all;
+  }
+
+  .copy-btn { font-size: 0.85rem; }
+
+  .copied-msg {
+    color: var(--green);
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    height: 1em;
+  }
+
+  .copied-msg.show { opacity: 1; }
+
+  /* ============ CONTACT ============ */
+  .contact {
+    text-align: center;
+    background:
+      linear-gradient(180deg, var(--cream), var(--pink) 100%);
+    padding-bottom: 2rem;
+  }
+
+  .phones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .phone-card {
+    background: white;
+    padding: 1.25rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--ink);
+    box-shadow: 0 3px 12px rgba(40, 64, 24, 0.08);
+    transition: transform 0.15s ease;
+    border: 1px solid rgba(58, 90, 44, 0.15);
+  }
+
+  .phone-card:hover { transform: translateY(-2px); }
+
+  .phone-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: var(--crimson);
+    line-height: 1;
+  }
+
+  .phone-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--green-deep);
+    margin-top: 0.35rem;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+    background: var(--pink);
+    color: var(--green-deep);
+  }
+
+  .footer-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--crimson);
+    line-height: 1;
+  }
+
+  .footer-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: var(--green);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (min-width: 720px) {
+    .event-img { height: 220px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Nos casamos</p>
+    <img src="assets/novios.jpg" alt="Ilustración de los novios" class="novios-img">
+    <h1 class="names">Alejandro <span class="amp">&amp;</span> Maravillas</h1>
+    <p class="hero-date">
+      Sábado
+      <strong>13 · Junio · 2026</strong>
+      Lorca · Murcia
+    </p>
+    <p class="hero-place">&mdash; y queremos que estés &mdash;</p>
+  </div>
+  <div class="scroll-hint">Desliza ↓</div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section>
+  <div class="divider">
+    <span class="divider-line"></span>
+    <img src="assets/paloma-tl.jpg" alt="">
+    <span class="divider-line"></span>
+  </div>
+  <p class="intro-text">
+    Después de compartir caminos, ilusiones y un sinfín de momentos,
+    queremos celebrar contigo el día en que uniremos los nuestros para siempre.
+  </p>
+</section>
+
+<!-- ============ EVENTOS ============ -->
+<section class="events">
+  <h2 class="section-title">La Celebración</h2>
+  <p class="section-subtitle">el día que nos casamos</p>
+
+  <div class="timeline">
+
+    <article class="event-card">
+      <img src="assets/puerta.jpg" alt="Ilustración de la Colegiata" class="event-img">
+      <div class="event-time">18:00 h</div>
+      <h3 class="event-name">Ceremonia</h3>
+      <p class="event-place">
+        <strong>Colegiata de San Patricio</strong>
+        Plaza de España · Lorca, 30800
+      </p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Colegiata+de+San+Patricio+Lorca+30800" target="_blank" rel="noopener">
+        📍 Cómo llegar
+      </a>
+    </article>
+
+    <article class="event-card">
+      <img src="assets/fondo-angeles.jpg" alt="Ilustración con ángeles y guirnalda" class="event-img">
+      <div class="event-time">a continuación</div>
+      <h3 class="event-name">Banquete y Fiesta</h3>
+      <p class="event-place">
+        <strong>En nuestra casa familiar</strong>
+        C. Rambla Alta, 74 · San Julián · Lorca
+      </p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=37.669598,-1.706427" target="_blank" rel="noopener">
+        📍 Cómo llegar
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section class="rsvp" id="rsvp">
+  <div class="rsvp-wrap">
+    <div class="divider">
+      <span class="divider-line"></span>
+      <img src="assets/paloma-br.jpg" alt="">
+      <span class="divider-line"></span>
+    </div>
+
+    <h2 class="section-title">Confirma tu asistencia</h2>
+    <p class="section-subtitle">necesitamos saber que vendrás</p>
+
+    <p style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:var(--ink-soft); margin-bottom:2rem;">
+      Por favor, confírmanos antes del <strong style="color:var(--crimson); font-style:normal;">15 de mayo de 2026</strong>.
+    </p>
+
+    <div class="form-card">
+      <form id="rsvpForm" action="https://formsubmit.co/alejandromartinezpelegrin@gmail.com" method="POST">
+
+        <!-- Formsubmit config -->
+        <input type="hidden" name="_subject" value="🤍 Nueva confirmación de boda">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://alexpele12.github.io/invitacion/?ok=1">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-group">
+          <label for="nombre">Tu nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label>¿Vendrás?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="asistencia" value="Sí, allí estaré" required data-target="asiste">
+              <span>✓ Sí, allí estaré</span>
+            </label>
+            <label>
+              <input type="radio" name="asistencia" value="No podré ir" required data-target="noasiste">
+              <span>No podré ir</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="hidden-until" id="asiste">
+          <div class="form-group">
+            <label for="acompanantes">Número total de personas (incluyéndote)</label>
+            <input type="number" id="acompanantes" name="acompanantes" min="1" max="10" value="1">
+          </div>
+
+          <div class="form-group">
+            <label>Alergias o intolerancias alimentarias</label>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="alergenos" value="Gluten"> Gluten</label>
+              <label><input type="checkbox" name="alergenos" value="Lactosa"> Lactosa</label>
+              <label><input type="checkbox" name="alergenos" value="Frutos secos"> Frutos secos</label>
+              <label><input type="checkbox" name="alergenos" value="Marisco"> Marisco</label>
+              <label><input type="checkbox" name="alergenos" value="Huevo"> Huevo</label>
+              <label><input type="checkbox" name="alergenos" value="Pescado"> Pescado</label>
+              <label><input type="checkbox" name="alergenos" value="Vegetariano"> Vegetariano</label>
+              <label><input type="checkbox" name="alergenos" value="Vegano"> Vegano</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="otras">Otras alergias o aclaraciones del menú</label>
+            <textarea id="otras" name="otras_alergias" rows="2" placeholder="p. ej. soja, sésamo, celíaco estricto…"></textarea>
+          </div>
+        </div>
+
+        <div class="hidden-until" id="noasiste">
+          <div class="form-group">
+            <label for="mensaje">¿Quieres dejarnos un mensaje?</label>
+            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Te echaremos de menos…"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono (por si necesitamos contactarte)</label>
+          <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="+34 ...">
+        </div>
+
+        <button type="submit" class="btn form-submit">Enviar confirmación</button>
+      </form>
+
+      <div id="formSuccess" class="form-success" style="display:none">
+        <h3>¡Gracias!</h3>
+        <p style="margin:0.5rem 0 0; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ink-soft);">
+          Hemos recibido tu confirmación.<br>¡Nos vemos el 13 de junio!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGALO ============ -->
+<section class="gift">
+  <div class="divider">
+    <span class="divider-line"></span>
+    <img src="assets/paloma-tr.jpg" alt="">
+    <span class="divider-line"></span>
+  </div>
+
+  <h2 class="section-title">Un detalle</h2>
+  <p class="section-subtitle">si quieres tener uno con nosotros</p>
+
+  <p class="intro-text" style="margin-bottom:2rem;">
+    Tu presencia es nuestro mejor regalo. Pero si quieres contribuir a nuestra nueva vida juntos,
+    te dejamos nuestro número de cuenta.
+  </p>
+
+  <div class="iban-card">
+    <span class="iban-label">Número de cuenta</span>
+    <span class="iban" id="iban">ES11 0182 5319 7102 0680 5768</span>
+    <button type="button" class="btn btn-gold copy-btn" onclick="copyIban()">
+      📋 Copiar IBAN
+    </button>
+    <p class="copied-msg" id="copiedMsg">✓ ¡Copiado al portapapeles!</p>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="contact">
+  <div class="divider">
+    <span class="divider-line"></span>
+    <img src="assets/paloma-bl.jpg" alt="">
+    <span class="divider-line"></span>
+  </div>
+
+  <h2 class="section-title">¿Alguna duda?</h2>
+  <p class="section-subtitle">llámanos cuando quieras</p>
+
+  <div class="phones">
+    <a class="phone-card" href="tel:+34649137983">
+      <div class="phone-name">Alejandro</div>
+      <div class="phone-num">+34 649 137 983</div>
+    </a>
+    <a class="phone-card" href="tel:+34620943641">
+      <div class="phone-name">Maravillas</div>
+      <div class="phone-num">+34 620 943 641</div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-script">¡Te esperamos!</div>
+  <div class="footer-sub">Alejandro &amp; Maravillas · 13.06.2026</div>
+</footer>
+
+<script>
+  // Mostrar/ocultar bloques según asistencia
+  document.querySelectorAll('input[name="asistencia"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      document.querySelectorAll('.hidden-until').forEach(el => el.classList.remove('show'));
+      const target = document.getElementById(e.target.dataset.target);
+      if (target) target.classList.add('show');
+    });
+  });
+
+  // Copiar IBAN
+  function copyIban() {
+    const iban = document.getElementById('iban').textContent.replace(/\s/g, '');
+    const msg = document.getElementById('copiedMsg');
+    const ok = () => { msg.classList.add('show'); setTimeout(() => msg.classList.remove('show'), 2500); };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(iban).then(ok).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+
+    function fallbackCopy() {
+      const ta = document.createElement('textarea');
+      ta.value = iban;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); ok(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  }
+
+  // Mensaje de éxito si regresamos con ?ok=1
+  if (new URLSearchParams(location.search).get('ok') === '1') {
+    document.getElementById('rsvpForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
+    }, 200);
+  }
+</script>
+
+</body>
+</html>
