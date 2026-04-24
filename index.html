@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -25,7 +25,7 @@
     --green: #3a5a2c;
     --green-deep: #284018;
     --green-soft: #7a9164;
-    --crimson: #9c2e2a;
+    --crimson: #284018;
     --gold: #c89b3c;
     --ochre: #c4854a;
     --ink: #2a2620;
@@ -38,16 +38,16 @@
 
   body {
     margin: 0;
-    font-family: 'Montserrat', system-ui, sans-serif;
-    font-weight: 300;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
     color: var(--ink);
     background: var(--paper);
-    line-height: 1.6;
+    line-height: 1.55;
     overflow-x: hidden;
+    font-size: 1.05rem;
   }
 
-  .serif { font-family: 'Cormorant Garamond', serif; }
-  .script { font-family: 'Great Vibes', cursive; font-weight: 400; }
+  h1, h2, h3, h4 { color: var(--green-deep); font-weight: 500; }
 
   /* ============ HERO ============ */
   .hero {
@@ -76,17 +76,6 @@
 
   .hero-content { position: relative; z-index: 1; }
 
-  .hero-eyebrow {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 1.5rem;
-    opacity: 0.85;
-  }
-
   .novios-img {
     max-width: 280px;
     width: 70%;
@@ -96,43 +85,29 @@
   }
 
   .names {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(3rem, 11vw, 5.5rem);
+    font-size: clamp(2.5rem, 9vw, 4.2rem);
     color: var(--green-deep);
-    line-height: 1;
+    line-height: 1.1;
     margin: 0.5rem 0;
-  }
-
-  .names .amp {
-    color: var(--crimson);
-    font-size: 0.9em;
-    margin: 0 0.1em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
   }
 
   .hero-date {
-    font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.1rem, 4vw, 1.5rem);
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--ink-soft);
+    color: var(--ink);
     margin-top: 1.5rem;
   }
 
   .hero-date strong {
     display: block;
     font-size: 1.6em;
-    color: var(--crimson);
+    color: var(--ink);
     margin: 0.3rem 0;
     letter-spacing: 0.1em;
     font-weight: 500;
-  }
-
-  .hero-place {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--green);
-    margin-top: 1rem;
   }
 
   .scroll-hint {
@@ -217,14 +192,7 @@
     letter-spacing: 0.02em;
   }
 
-  .section-subtitle {
-    text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: 1.8rem;
-    color: var(--crimson);
-    margin: 0 0 2.5rem;
-    line-height: 1;
-  }
+  .section-subtitle { display: none; }
 
   .intro-text {
     text-align: center;
@@ -262,8 +230,8 @@
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--green-soft), var(--gold), var(--crimson));
+    height: 2px;
+    background: var(--green-soft);
   }
 
   .event-img {
@@ -276,11 +244,13 @@
   }
 
   .event-time {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.2rem;
-    color: var(--crimson);
+    font-size: 1.1rem;
+    color: var(--ink);
     line-height: 1;
     margin-bottom: 0.25rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 
   .event-name {
@@ -564,10 +534,10 @@
   }
 
   .form-success h3 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    color: var(--crimson);
+    font-size: 1.8rem;
+    color: var(--green-deep);
     margin: 0;
+    font-weight: 500;
   }
 
   /* ============ GIFT ============ */
@@ -648,17 +618,16 @@
   .phone-card:hover { transform: translateY(-2px); }
 
   .phone-name {
-    font-family: 'Great Vibes', cursive;
-    font-size: 1.8rem;
-    color: var(--crimson);
+    font-size: 1.2rem;
+    color: var(--green-deep);
     line-height: 1;
+    font-weight: 500;
   }
 
   .phone-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--green-deep);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--ink);
     margin-top: 0.35rem;
   }
 
@@ -671,18 +640,17 @@
   }
 
   .footer-script {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    color: var(--crimson);
+    font-size: 1.5rem;
+    color: var(--green-deep);
     line-height: 1;
+    font-weight: 500;
   }
 
   .footer-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
-    color: var(--green);
+    color: var(--ink);
+    letter-spacing: 0.05em;
   }
 
   /* ============ RESPONSIVE ============ */
@@ -704,31 +672,16 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow">Nos casamos</p>
     <img src="assets/novios.jpg" alt="Ilustración de los novios" class="novios-img">
-    <h1 class="names">Alejandro <span class="amp">&amp;</span> Maravillas</h1>
+    <h1 class="names">Alejandro &amp; Maravillas</h1>
     <p class="hero-date">
       Sábado
       <strong>13 · Junio · 2026</strong>
       Lorca · Murcia
     </p>
-    <p class="hero-place">&mdash; y queremos que estés &mdash;</p>
   </div>
   <div class="scroll-hint">Desliza ↓</div>
 </header>
-
-<!-- ============ INTRO ============ -->
-<section>
-  <div class="divider">
-    <span class="divider-line"></span>
-    <img src="assets/paloma-tl.jpg" alt="">
-    <span class="divider-line"></span>
-  </div>
-  <p class="intro-text">
-    Después de compartir caminos, ilusiones y un sinfín de momentos,
-    queremos celebrar contigo el día en que uniremos los nuestros para siempre.
-  </p>
-</section>
 
 <!-- ============ EVENTOS ============ -->
 <section class="events">
@@ -773,8 +726,8 @@
     <h2 class="section-title">Confirma tu asistencia</h2>
     <p class="section-subtitle">necesitamos saber que vendrás</p>
 
-    <p style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:var(--ink-soft); margin-bottom:2rem;">
-      Por favor, confírmanos antes del <strong style="color:var(--crimson); font-style:normal;">15 de mayo de 2026</strong>.
+    <p style="text-align:center; font-size:1.05rem; color:var(--ink); margin-bottom:2rem;">
+      Por favor, confírmanos antes del <strong>15 de mayo de 2026</strong>.
     </p>
 
     <div class="form-card">
@@ -890,7 +843,7 @@
 
       <div id="formSuccess" class="form-success" style="display:none">
         <h3>¡Gracias!</h3>
-        <p style="margin:0.5rem 0 0; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ink-soft);">
+        <p style="margin:0.5rem 0 0; color:var(--ink);">
           Hemos recibido tu confirmación.<br>¡Nos vemos el 13 de junio!
         </p>
       </div>
